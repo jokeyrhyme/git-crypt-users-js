@@ -1,0 +1,44 @@
+{
+  "name": "git-crypt-ls-users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run jest && npm run nsp",
+    "jest": "jest",
+    "prettier": "npx -q prettier --list-different --write \"{,!(build|coverage|dist|flow-typed|typings|vendor)/**/}*.{css,js,jsx,less,scss,ts,tsx}\" || exit 0",
+    "pretest": "npm run prettier && npm run eslint && npm run sort-package-json",
+    "eslint": "eslint --fix --cache .",
+    "nsp": "npx -q nsp check",
+    "sort-package-json": "npx -q sort-package-json"
+  },
+  "keywords": [],
+  "author": "Ron Waldon <jokeyrhyme@gmail.com> (https://github.com/jokeyrhyme)",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "jest": "^21.0.2",
+    "npx": "^9.6.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "lines": 90
+      }
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "eslintIgnore": []
+}
