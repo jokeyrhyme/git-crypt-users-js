@@ -44,7 +44,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
-    "jest": "^21.0.2",
+    "jest": "^21.2.1",
     "npx": "^9.6.0"
   },
   "engines": {
@@ -65,5 +65,16 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jokeyrhyme/git-crypt-users-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jokeyrhyme/git-crypt-users-js/issues"
+  },
+  "homepage": "https://github.com/jokeyrhyme/git-crypt-users-js#readme"
 }
