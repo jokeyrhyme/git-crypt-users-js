@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 
+/* @flow */
 /* eslint-disable no-console */
 'use strict';
 
 const { getUserIds } = require('../lib/git-crypt.js');
-const { getLocalPublicKey, parsePublicKeys } = require('../lib/gpg.js');
+const {
+  getLocalPublicKey,
+  getUsernames,
+  parsePublicKeys,
+} = require('../lib/gpg.js');
 
 console.log(`
 git-crypt-users-list: lists git-crypt users according to your GNUPG keyring
@@ -19,24 +24,18 @@ git-crypt-users-list: lists git-crypt users according to your GNUPG keyring
       continue;
     }
 
-    const details = [keyId];
+    const details = [keyId, await getUsernames(keyId)];
     const parsedKey = parsePublicKeys(result);
 
-    for (const user of parsedKey.users || []) {
-      if (!user || !user.userId || !user.userId.userid) {
-        continue;
-      }
-      if (
+    const hasRevokedUser = parsedKey.users.some(
+      user =>
         Array.isArray(user.revocationCertifications) &&
         user.revocationCertifications.length
-      ) {
-        continue;
-      }
-      details.push(user.userId.userid);
-    }
-    if (parsedKey.revocationSignature) {
+    );
+    if (parsedKey.revocationSignature || hasRevokedUser) {
       details.push('REVOKED!');
     }
+
     console.log(details.join(' '));
   }
 })().catch(err => {

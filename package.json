@@ -11,6 +11,10 @@
     "openpgp",
     "pgp"
   ],
+  "homepage": "https://github.com/jokeyrhyme/git-crypt-users-js#readme",
+  "bugs": {
+    "url": "https://github.com/jokeyrhyme/git-crypt-users-js/issues"
+  },
   "license": "MIT",
   "author": "Ron Waldon <jokeyrhyme@gmail.com> (https://github.com/jokeyrhyme)",
   "files": [
@@ -24,13 +28,21 @@
     "git-crypt-users-remove": "bin/remove.js",
     "git-crypt-users-rotate": "bin/rotate.js"
   },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jokeyrhyme/git-crypt-users-js.git"
+  },
   "scripts": {
     "eslint": "eslint --fix --cache .",
+    "flow": "npx -q flow-bin@^0.56.0 check",
     "jest": "jest",
     "nsp": "npx -q nsp check",
     "sort-package-json": "npx -q sort-package-json",
     "pretest": "npm run prettier && npm run eslint && npm run sort-package-json",
-    "test": "npm run jest && npm run nsp",
+    "test": "npm run jest && npm run nsp && npm run flow",
     "prettier": "npx -q prettier --list-different --write \"{,!(build|coverage|dist|flow-typed|typings|vendor)/**/}*.{css,js,jsx,less,scss,ts,tsx}\" || exit 0"
   },
   "dependencies": {
@@ -52,7 +64,8 @@
     "npm": ">=5"
   },
   "eslintIgnore": [
-    "coverage"
+    "coverage",
+    "flow-typed"
   ],
   "jest": {
     "collectCoverage": true,
@@ -65,16 +78,5 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
-  },
-  "directories": {
-    "lib": "lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jokeyrhyme/git-crypt-users-js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jokeyrhyme/git-crypt-users-js/issues"
-  },
-  "homepage": "https://github.com/jokeyrhyme/git-crypt-users-js#readme"
+  }
 }
