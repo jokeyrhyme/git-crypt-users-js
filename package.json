@@ -52,7 +52,7 @@
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
-    "eslint": "^4.6.1",
+    "eslint": "^5.0.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.5.0",
