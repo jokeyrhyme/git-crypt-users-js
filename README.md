@@ -2,13 +2,11 @@
 
 conveniently manage git-crypt users
 
-
 ## Installation
 
 ```sh
 npm install git-crypt-users
 ```
-
 
 ## Usage
 

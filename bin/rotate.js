@@ -42,7 +42,7 @@ const cwd = process.cwd();
     return;
   }
 
-  if (!await isClean({ cwd })) {
+  if (!(await isClean({ cwd }))) {
     console.error('error: git repository is unclean / has uncommitted changes');
     process.exitCode = 1;
     return;
@@ -85,7 +85,7 @@ const cwd = process.cwd();
       const usernames = await getUsernames(userId);
       console.error(
         `error: unable to add user: ${usernames}`,
-        err.stderr || err
+        err.stderr || err,
       );
     }
   }

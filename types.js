@@ -2,6 +2,7 @@
 
 /* ::
 export type ParsedKey = {
+  revocationSignature?: any,
   users: ParsedUser[],
 };
 export type ParsedUser = {
