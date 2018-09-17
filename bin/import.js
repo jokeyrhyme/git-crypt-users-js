@@ -29,7 +29,7 @@ git-crypt-users-import: loads git-crypt users' public keys into your GNUPG keyri
   }
 
   const tempDir = await promisify(mkdtemp)(
-    path.join(tmpdir(), 'git-crypt-users-')
+    path.join(tmpdir(), 'git-crypt-users-'),
   );
 
   const knownKeys = await listKnownPublicKeys();

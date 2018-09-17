@@ -85,7 +85,7 @@ const cwd = process.cwd();
       const usernames = await getUsernames(userId);
       console.error(
         `error: unable to add user: ${usernames}`,
-        err.stderr || err
+        err.stderr || err,
       );
     }
   }

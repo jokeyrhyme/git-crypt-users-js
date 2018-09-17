@@ -20,6 +20,11 @@ indent_size = 2
 indent_style = space
 trim_trailing_whitespace = true
 
+# Bazel: https://bazel.build/
+# https://github.com/bazelbuild/buildtools/blob/master/BUILD.bazel
+[*.{bazel,bzl}]
+indent_size = 4
+
 # CSS
 # https://google.github.io/styleguide/htmlcssguide.xml#General_Formatting_Rules
 # http://cssguidelin.es/#syntax-and-formatting
@@ -51,10 +56,16 @@ trim_trailing_whitespace = true
 indent_size = 2
 indent_style = space
 
-# JavaScript, JSON, JSX
+# JavaScript, JSON, JSX, JavaScript Modules
 # https://github.com/feross/standard
-[*.{js,json,jsx}]
+[*.{js,json,jsx,mjs}]
 indent_size = 2
+indent_style = space
+
+# Kotlin
+# https://android.github.io/kotlin-guides/style.html#indentation
+[*.{kt,kts}]
+indent_size = 4
 indent_style = space
 
 # LESS
@@ -98,6 +109,12 @@ indent_style = space
 # Shell
 # https://google.github.io/styleguide/shell.xml#Indentation
 [*.{bash,sh,zsh}]
+indent_size = 2
+indent_style = space
+
+# TOML
+# https://github.com/toml-lang/toml/tree/master/examples
+[*.toml]
 indent_size = 2
 indent_style = space
 

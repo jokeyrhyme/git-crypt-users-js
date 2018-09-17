@@ -30,7 +30,7 @@ git-crypt-users-list: lists git-crypt users according to your GNUPG keyring
     const hasRevokedUser = parsedKey.users.some(
       user =>
         Array.isArray(user.revocationCertifications) &&
-        user.revocationCertifications.length
+        user.revocationCertifications.length,
     );
     if (parsedKey.revocationSignature || hasRevokedUser) {
       details.push('REVOKED!');

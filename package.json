@@ -36,18 +36,21 @@
     "lib": "lib"
   },
   "scripts": {
-    "eslint": "eslint --fix --cache .",
-    "flow": "npx -q flow-bin@^0.56.0 check",
+    "eslint": "eslint --cache --fix .",
+    "flow": "flow check",
+    "fmt": "npm run sort-package-json && npm run prettier && npm run fmt:eslint",
+    "fmt:eslint": "eslint --fix --no-eslintrc --parser-options \"ecmaVersion:2018,ecmaFeatures:{jsx:true}\" --rule \"key-spacing:[error,{align:value}]\" .",
     "jest": "jest",
+    "lint": "npm run eslint && npm run flow",
     "nsp": "npx -q nsp check",
     "sort-package-json": "npx -q sort-package-json",
-    "pretest": "npm run prettier && npm run eslint && npm run sort-package-json",
-    "test": "npm run jest && npm run nsp && npm run flow",
-    "prettier": "npx -q prettier --list-different --write \"{,!(build|coverage|dist|flow-typed|typings|vendor)/**/}*.{css,js,jsx,less,scss,ts,tsx}\" || exit 0"
+    "pretest": "npm run fmt",
+    "test": "npm run jest && npm run nsp && npm run lint",
+    "prettier": "npx -q prettier --loglevel=warn --write \"**/*.{css,js,json,jsx,md,less,scss,ts,tsx}\""
   },
   "prettier": {
     "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "all"
   },
   "eslintIgnore": [
     "coverage",
@@ -72,6 +75,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.0",
     "eslint-plugin-promise": "^4.0.0",
+    "flow-bin": "^0.81.0",
     "jest": "^21.2.1",
     "npx": "^10.0.1"
   },

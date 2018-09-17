@@ -91,7 +91,7 @@ const cwd = process.cwd();
     } catch (err) {
       console.error(
         `error: unable to add user: ${usernames}`,
-        err.stderr || err
+        err.stderr || err,
       );
     }
   }
