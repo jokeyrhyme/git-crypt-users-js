@@ -67,16 +67,16 @@
   "dependencies": {
     "execa": "^1.0.0",
     "mkdirp": "^0.5.1",
-    "openpgp": "^4.0.0",
+    "openpgp": "^4.1.2",
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
-    "eslint": "^5.0.0",
+    "eslint": "^5.7.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.0",
     "eslint-plugin-promise": "^4.0.0",
     "flow-bin": "^0.81.0",
-    "jest": "^22.0.0",
+    "jest": "^23.6.0",
     "npx": "^10.0.1"
   },
   "engines": {
