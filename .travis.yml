@@ -3,6 +3,7 @@ sudo: false
 node_js:
   - '8'
   - '10'
+  - '11'
 env:
   global:
     - CXX=g++-4.8

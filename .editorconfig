@@ -5,25 +5,18 @@
 # top-most EditorConfig file
 root = true
 
-# Unix-style newlines with a newline ending every file
-[*]
-end_of_line = lf
-insert_final_newline = true
-
-# Set default charset
+# defaults
 [*]
 charset = utf-8
-
-# Other good defaults
-[*]
-indent_size = 2
-indent_style = space
+end_of_line = lf
+insert_final_newline = true
 trim_trailing_whitespace = true
 
 # Bazel: https://bazel.build/
 # https://github.com/bazelbuild/buildtools/blob/master/BUILD.bazel
 [*.{bazel,bzl}]
 indent_size = 4
+indent_style = space
 
 # CSS
 # https://google.github.io/styleguide/htmlcssguide.xml#General_Formatting_Rules
@@ -43,6 +36,13 @@ indent_style = tab
 [*.go]
 indent_style = tab
 
+# GraphQL
+# https://graphql.org/learn/
+# https://prettier.io
+[*.graphql]
+indent_size = 2
+indent_style = space
+
 # HTML
 # https://google.github.io/styleguide/htmlcssguide.xml#General_Formatting_Rules
 [*.{htm,html}]
@@ -56,9 +56,10 @@ trim_trailing_whitespace = true
 indent_size = 2
 indent_style = space
 
-# JavaScript, JSON, JSX, JavaScript Modules
+# JavaScript, JSON, JSX, JavaScript Modules, TypeScript
 # https://github.com/feross/standard
-[*.{js,json,jsx,mjs}]
+# https://prettier.io
+[*.{js,json,jsx,mjs,ts,tsx}]
 indent_size = 2
 indent_style = space
 
@@ -117,13 +118,6 @@ indent_style = space
 [*.toml]
 indent_size = 2
 indent_style = space
-
-# TypeScript
-# https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#style
-# https://github.com/Microsoft/TypeScript/blob/master/.editorconfig
-[*.ts]
-indent_style = space
-indent_size = 4
 
 # YAML
 # http://yaml.org/spec/1.2/2009-07-21/spec.html#id2576668
