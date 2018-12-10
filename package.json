@@ -75,7 +75,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.0",
-    "flow-bin": "^0.87.0",
+    "flow-bin": "^0.88.0",
     "jest": "^23.6.0",
     "npx": "^10.0.1"
   },
