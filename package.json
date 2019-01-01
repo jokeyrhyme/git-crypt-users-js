@@ -42,11 +42,10 @@
     "fmt:eslint": "eslint --fix --no-eslintrc --parser-options \"ecmaVersion:2018,ecmaFeatures:{jsx:true}\" --rule \"key-spacing:[error,{align:value}]\" .",
     "jest": "jest",
     "lint": "npm run eslint && npm run flow",
-    "nsp": "npx -q nsp check",
+    "prettier": "npx -q prettier --loglevel=warn --write \"**/*.{css,htm,html,js,json,jsx,md,less,scss,ts,tsx,vue}\"",
     "sort-package-json": "npx -q sort-package-json",
     "pretest": "npm run fmt",
-    "test": "npm run jest && npm run nsp && npm run lint",
-    "prettier": "npx -q prettier --loglevel=warn --write \"**/*.{css,js,json,jsx,md,less,scss,ts,tsx}\""
+    "test": "npm run jest && npm run lint && npm audit"
   },
   "prettier": {
     "singleQuote": true,
@@ -76,11 +75,10 @@
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.0",
     "flow-bin": "^0.88.0",
-    "jest": "^23.6.0",
-    "npx": "^10.0.1"
+    "jest": "^23.6.0"
   },
   "engines": {
     "node": ">=10",
-    "npm": ">=5"
+    "npm": ">=6"
   }
 }
