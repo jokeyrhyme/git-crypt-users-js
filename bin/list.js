@@ -25,7 +25,7 @@ git-crypt-users-list: lists git-crypt users according to your GNUPG keyring
     }
 
     const details = [keyId, await getUsernames(keyId)];
-    const parsedKey = parsePublicKeys(result);
+    const parsedKey = await parsePublicKeys(result);
 
     const hasRevokedUser = parsedKey.users.some(
       user =>

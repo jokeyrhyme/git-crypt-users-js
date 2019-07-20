@@ -58,7 +58,7 @@ const cwd = process.cwd();
       if (!publicKey) {
         return false;
       }
-      const parsedKey = parsePublicKeys(publicKey);
+      const parsedKey = await parsePublicKeys(publicKey);
       if (parsedKey.revocationSignature) {
         return false; // revoked!
       }
