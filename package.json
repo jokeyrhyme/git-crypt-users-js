@@ -64,7 +64,7 @@
     }
   },
   "dependencies": {
-    "execa": "^2.0.0",
+    "execa": "^2.0.3",
     "mkdirp": "^0.5.1",
     "openpgp": "^4.2.1",
     "rimraf": "^2.6.2",
@@ -76,7 +76,7 @@
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.0",
     "flow-bin": "^0.93.0",
-    "jest": "^23.6.0"
+    "jest": "^24.8.0"
   },
   "engines": {
     "node": ">=10",
