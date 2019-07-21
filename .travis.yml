@@ -5,12 +5,14 @@ node_js:
 env:
   global:
     - CXX=g++-4.8
+    - DEBUG=gpg
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+      - gnupg2
 install:
   - npm install --global npm
   - npm install
