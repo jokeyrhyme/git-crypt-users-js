@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "execa": "^2.0.3",
+    "execa": "^3.2.0",
     "mkdirp": "^0.5.1",
     "node-fetch": "^2.6.0",
     "openpgp": "^4.5.5",
